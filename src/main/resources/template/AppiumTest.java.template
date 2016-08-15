@@ -1,0 +1,19 @@
+package tests;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+/**
+ * Created by ajain on 8/4/16.
+ */
+public class AppiumTest extends AndroidSetup{
+
+    @Test
+    public void helloTest() {
+        String app_package_name = "com.example.myfirstapp:id/";
+        By searchText = By.id(app_package_name + "edit_message");
+        By button = By.id(app_package_name + "button");
+        driver.findElement(searchText).sendKeys("someone@testvagrant.com");
+        driver.findElement(button).click();
+    }
+}
